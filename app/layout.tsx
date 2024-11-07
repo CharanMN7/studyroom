@@ -4,10 +4,9 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  // Change this to your liking:
-  title: "Charan's Next 14 Template",
+  title: "Studyroom",
   description:
-    "This is a Next 14 template created by Charan (https://charan.dev/)",
+    "Studyroom is your personal space to study whatever you want, however you want.",
 };
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
         </ThemeProvider>
       </body>
