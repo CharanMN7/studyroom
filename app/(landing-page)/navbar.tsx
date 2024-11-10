@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   return (
@@ -9,12 +9,8 @@ const Navbar = () => {
         {/* Replace it with an image */}
       </Link>
       <div className="flex gap-4 items-center">
-        <Button variant="outline" className="rounded-full">
-          <Link href="/s1/about">Login</Link>
-        </Button>
-        or
         <Button variant="default" className="rounded-full">
-          <Link href="/s1/about">Sign Up</Link>
+          <Link href="/auth">Login or Get Started!</Link>
         </Button>
       </div>
     </header>
