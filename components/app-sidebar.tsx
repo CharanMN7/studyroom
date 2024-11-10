@@ -14,6 +14,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 // This is sample data.
 const data = {
@@ -42,6 +43,8 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const pathname = usePathname();
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -51,9 +54,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
-        <SidebarMenuButton tooltip={"Settings"}>
-          <Settings2 />
-          <Link href={"/settings"}>{"Settings"}</Link>
+        <SidebarMenuButton
+          tooltip="Settings"
+          asChild
+          isActive={pathname == "/settings" ? true : false}
+        >
+          <Link href="/settings">
+            <Settings2 />
+            Settings
+          </Link>
         </SidebarMenuButton>
         <NavUser user={data.user} />
       </SidebarFooter>

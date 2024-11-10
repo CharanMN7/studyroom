@@ -10,6 +10,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function NavMain({
   items,
@@ -20,6 +21,8 @@ export function NavMain({
     icon?: LucideIcon;
   }[];
 }) {
+  const pathname = usePathname();
+  const currentPath = pathname.split("/")[1].replace(" ", "-");
   return (
     <SidebarGroup>
       <SidebarMenu>
@@ -28,9 +31,15 @@ export function NavMain({
         </SidebarMenuItem>
         {items.map((item) => (
           <SidebarMenuItem key={item.title}>
-            <SidebarMenuButton tooltip={item.title}>
-              {item.icon && <item.icon />}
-              <Link href={item.url}>{item.title}</Link>
+            <SidebarMenuButton
+              tooltip={item.title}
+              asChild
+              isActive={currentPath == item.url.split("/")[1] ? true : false}
+            >
+              <Link href={item.url}>
+                {item.icon && <item.icon />}
+                {item.title}
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         ))}
