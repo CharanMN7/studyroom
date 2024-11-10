@@ -98,7 +98,7 @@ export default function LoginForm() {
                     <div className="flex justify-between items-center">
                       <FormLabel htmlFor="password">Password</FormLabel>
                       <Link
-                        href="#"
+                        href="/forgot-password"
                         className="ml-auto inline-block text-sm underline"
                       >
                         Forgot your password?
