@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const Navbar = () => {
   return (
@@ -9,7 +10,8 @@ const Navbar = () => {
         {/* Replace it with an image */}
       </Link>
       <div className="flex gap-4 items-center">
-        <Button variant="default" className="rounded-full">
+        <ModeToggle />
+        <Button variant="default" className="rounded-full" asChild>
           <Link href="/auth">Login or Get Started!</Link>
         </Button>
       </div>
