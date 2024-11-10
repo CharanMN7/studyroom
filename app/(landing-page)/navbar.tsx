@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
+import { ChevronRightIcon } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -12,7 +13,12 @@ const Navbar = () => {
       <div className="flex gap-4 items-center">
         <ModeToggle />
         <Button variant="default" className="rounded-full" asChild>
-          <Link href="/auth">Login or Get Started!</Link>
+          <Link href="/auth">
+            <span className="group inline-flex items-center">
+              Login or Get Started!{" "}
+              <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </span>
+          </Link>
         </Button>
       </div>
     </header>
