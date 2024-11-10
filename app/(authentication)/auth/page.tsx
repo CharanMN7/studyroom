@@ -1,6 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import LoginCard from "./login-card";
-import SignupCard from "./signup-card";
+import LoginForm from "./login-form";
+import SignupForm from "./signup-form";
 
 function Page() {
   return (
@@ -10,10 +10,10 @@ function Page() {
         <TabsTrigger value="sign-up">Sign Up</TabsTrigger>
       </TabsList>
       <TabsContent value="login">
-        <LoginCard />
+        <LoginForm />
       </TabsContent>
       <TabsContent value="sign-up">
-        <SignupCard />
+        <SignupForm />
       </TabsContent>
     </Tabs>
   );
